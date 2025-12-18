@@ -2,7 +2,7 @@ import pandas as pd
 import os
 from sklearn.preprocessing import StandardScaler
 
-INPUT_PATH = "../dataset_raw/Student_Performance_raw.csv"
+INPUT_PATH = "dataset_raw/Student_Performance_raw.csv"
 OUTPUT_DIR = "dataset_preprocessing"
 OUTPUT_PATH = f"{OUTPUT_DIR}/Student_Performance_Preprocessed.csv"
 
