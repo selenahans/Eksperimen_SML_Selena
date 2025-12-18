@@ -2,9 +2,10 @@ import pandas as pd
 import os
 from sklearn.preprocessing import StandardScaler
 
-INPUT_PATH = "dataset_raw/Student_Performance_raw.csv"
-OUTPUT_DIR = "dataset_preprocessing"
-OUTPUT_PATH = f"{OUTPUT_DIR}/Student_Performance_Preprocessed.csv"
+BASE_DIR = os.getcwd()   
+INPUT_PATH = os.path.join(BASE_DIR, "dataset_raw", "Student_Performance_raw.csv")
+OUTPUT_DIR = os.path.join(BASE_DIR, "preprocessing", "dataset_preprocessing")
+OUTPUT_PATH = os.path.join(OUTPUT_DIR, "Student_Performance_Preprocessed.csv")
 
 def preprocess_data():
 
