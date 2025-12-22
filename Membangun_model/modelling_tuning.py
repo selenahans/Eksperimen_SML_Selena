@@ -9,13 +9,15 @@ from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
 
-mlflow.set_tracking_uri(
-    "https://dagshub.com/selenahans/Eksperimen-SML-Selena.mlflow"
-)
+mlflow.end_run()
+mlflow.sklearn.autolog(disable=True)
 mlflow.set_experiment("Student_Performance_Tuning")
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-DATA_PATH = os.path.join(BASE_DIR, "Student_Performance_Preprocessed.csv")
+DATA_PATH = os.path.join(
+    BASE_DIR,
+    "dataset_preprocessing/Student_Performance_Preprocessed.csv"
+)
 
 df = pd.read_csv(DATA_PATH)
 df = df.fillna(0)
@@ -43,12 +45,15 @@ grid_search = GridSearchCV(
     n_jobs=-1
 )
 
-with mlflow.start_run(run_name="RandomForest_Hyperparameter_Tuning"):
+with mlflow.start_run(
+    run_name="RandomForest_Hyperparameter_Tuning",
+    nested=True
+):
+    mlflow.set_tag("stage", "tuning")
 
     grid_search.fit(X_train, y_train)
 
     best_model = grid_search.best_estimator_
-
     y_pred = best_model.predict(X_test)
 
     mae = mean_absolute_error(y_test, y_pred)
@@ -60,7 +65,7 @@ with mlflow.start_run(run_name="RandomForest_Hyperparameter_Tuning"):
     mlflow.log_metric("MAE", mae)
     mlflow.log_metric("RMSE", rmse)
     mlflow.log_metric("R2_Score", r2)
-
+    
     feature_importance = pd.DataFrame({
         "feature": X.columns,
         "importance": best_model.feature_importances_
@@ -87,4 +92,4 @@ with mlflow.start_run(run_name="RandomForest_Hyperparameter_Tuning"):
         "best_random_forest_tuned_model"
     )
 
-print("Hyperparameter tuning selesai dan tercatat di MLflow (DagsHub)")
+print("Hyperparameter tuning selesai dan tercatat di MLflow")

@@ -1,0 +1,10 @@
+artifact_location: file:C:/laragon/www/Eksperimen_SML_Selena/mlruns/867119545999587392/models/m-f400fe62eb2e4f1799d6ed15187156d2/artifacts
+creation_timestamp: 1766392554075
+experiment_id: '867119545999587392'
+last_updated_timestamp: 1766392561566
+model_id: m-f400fe62eb2e4f1799d6ed15187156d2
+model_type: null
+name: model
+source_run_id: 53537cbe33df4cc99a70600effc2bc7c
+status: 2
+status_message: null

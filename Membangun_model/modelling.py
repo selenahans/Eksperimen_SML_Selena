@@ -8,8 +8,9 @@ import os
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.metrics import mean_absolute_error, mean_squared_error, r2_score
-
-mlflow.set_tracking_uri("https://dagshub.com/selenahans/Eksperimen-SML-Selena.mlflow")
+mlflow.set_tracking_uri("file:./mlruns")
+mlflow.set_experiment("Eksperimen_SML_Selena")
+# mlflow.set_tracking_uri("https://dagshub.com/selenahans/Eksperimen-SML-Selena.mlflow")
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_PATH = os.path.join(BASE_DIR, "Student_Performance_Preprocessed.csv")

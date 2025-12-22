@@ -1,0 +1,11 @@
+digest: cd6470c8
+name: dataset
+profile: '{"num_rows": 7898, "num_elements": 39490}'
+schema: '{"mlflow_colspec": [{"type": "double", "name": "Hours Studied", "required":
+  true}, {"type": "double", "name": "Previous Scores", "required": true}, {"type":
+  "double", "name": "Extracurricular Activities", "required": true}, {"type": "double",
+  "name": "Sleep Hours", "required": true}, {"type": "double", "name": "Sample Question
+  Papers Practiced", "required": true}]}'
+source: '{"tags": {"mlflow.user": "LENOVO", "mlflow.source.name": "Membangun_model/modelling.py",
+  "mlflow.source.type": "LOCAL"}}'
+source_type: code

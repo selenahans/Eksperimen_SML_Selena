@@ -1,0 +1,10 @@
+artifact_location: file:///C:/laragon/www/Eksperimen_SML_Selena/mlruns/140133146509968074/models/m-93ad7a57c1cd48c496500c41cb0ea8f4/artifacts
+creation_timestamp: 1766393278058
+experiment_id: '140133146509968074'
+last_updated_timestamp: 1766393285558
+model_id: m-93ad7a57c1cd48c496500c41cb0ea8f4
+model_type: null
+name: best_random_forest_tuned_model
+source_run_id: d555ef7df1f64a0ba08c2cd0d8ae4fbd
+status: 2
+status_message: null
